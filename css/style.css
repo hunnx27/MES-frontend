@@ -1,0 +1,224 @@
+/* ============================================================
+   MES 대시보드 스타일
+   ============================================================ */
+
+/* 기본 배경 */
+body {
+    background-color: #1a1a2e;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 카드 스타일 */
+.card {
+    background-color: #16213e;
+    border: none;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    background-color: #0f3460;
+    border-bottom: 1px solid #1a4d7a;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* KPI 카드 */
+.kpi-card {
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.kpi-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/* 센서 값 표시 */
+.sensor-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* 설비 카드 */
+.equipment-card {
+    border: 2px solid #0f3460;
+    transition: transform 0.2s, border-color 0.2s;
+    height: 100%;
+}
+
+.equipment-card:hover {
+    transform: translateY(-5px);
+    border-color: #3498db;
+    box-shadow: 0 8px 16px rgba(52, 152, 219, 0.3);
+}
+
+/* 상태 뱃지 */
+.status-running {
+    background-color: #28a745;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+}
+
+.status-idle {
+    background-color: #6c757d;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+}
+
+/* 알람 아이템 */
+.alarm-item {
+    border-left: 4px solid;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    transition: opacity 0.3s;
+}
+
+.alarm-warning {
+    border-color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.alarm-critical {
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.alarm-item.opacity-50 {
+    opacity: 0.5;
+}
+
+/* PLC 로그 아이템 */
+.plc-log-item {
+    border-left: 4px solid;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.plc-good {
+    border-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.plc-defect {
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* 로그 컨테이너 */
+.log-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* 스크롤바 스타일 */
+.log-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.log-container::-webkit-scrollbar-track {
+    background: #0f3460;
+    border-radius: 4px;
+}
+
+.log-container::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 4px;
+}
+
+.log-container::-webkit-scrollbar-thumb:hover {
+    background: #5dade2;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .kpi-value {
+        font-size: 2rem;
+    }
+    
+    .sensor-value {
+        font-size: 1.2rem;
+    }
+    
+    .equipment-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alarm-item,
+.plc-log-item {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 헤더 */
+h1 {
+    font-weight: bold;
+    color: #fff;
+}
+
+h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* 텍스트 색상 */
+.text-muted {
+    color: #adb5bd !important;
+}
+
+/* 구분선 */
+hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 1rem 0;
+}
